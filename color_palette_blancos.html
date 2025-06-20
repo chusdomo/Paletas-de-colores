@@ -73,11 +73,12 @@
         .color-formula {
             font-size: 1.96em;
             color: #666;
-            line-height: 1.4;
+            line-height: 1.6;
             background: white;
             padding: 8px;
             border-radius: 6px;
             border-left: 3px solid #ddd;
+            white-space: pre-line;
         }
         
         .hex-code {
@@ -124,7 +125,7 @@
             'Rojo Medio': [220, 20, 20],
             'Magenta': [255, 0, 128],
             'Amarillo Medio': [255, 215, 0],
-            'Azul Cobalto': [0, 71, 171],
+            'Azul de Cobalto': [0, 71, 171],
             'Azul Ultramar': [18, 10, 143],
             'Blanco Titanio': [255, 255, 255]
         };
@@ -132,20 +133,20 @@
         // Definición de las mezclas
         const colorMixes = [
             { name: 'Blanco', formula: 'Blanco Titanio 100', components: {'Blanco Titanio': 100} },
-            { name: 'Hueso', formula: 'Blanco Titanio 98<br>Amarillo Medio 2', components: {'Blanco Titanio': 98, 'Amarillo Medio': 2} },
-            { name: 'Marfil', formula: 'Blanco Titanio 96<br>Amarillo Medio 3<br>Rojo Medio 1', components: {'Blanco Titanio': 96, 'Amarillo Medio': 3, 'Rojo Medio': 1} },
+            { name: 'Hueso', formula: 'Blanco Titanio 98\nAmarillo Medio 2', components: {'Blanco Titanio': 98, 'Amarillo Medio': 2} },
+            { name: 'Marfil', formula: 'Blanco Titanio 96\nAmarillo Medio 3\nRojo Medio 1', components: {'Blanco Titanio': 96, 'Amarillo Medio': 3, 'Rojo Medio': 1} },
             { name: 'Nieve', formula: 'Blanco Titanio 100', components: {'Blanco Titanio': 100} },
-            { name: 'Perla', formula: 'Blanco Titanio 97<br>Azul Cobalto 2<br>Amarillo Medio 1', components: {'Blanco Titanio': 97, 'Azul Cobalto': 2, 'Amarillo Medio': 1} },
-            { name: 'Nacarado', formula: 'Blanco Titanio 95<br>Azul Cobalto 2<br>Amarillo Medio 2<br>Rojo Medio 1', components: {'Blanco Titanio': 95, 'Azul Cobalto': 2, 'Amarillo Medio': 2, 'Rojo Medio': 1} },
-            { name: 'Lechoso', formula: 'Blanco Titanio 99<br>Amarillo Medio 1', components: {'Blanco Titanio': 99, 'Amarillo Medio': 1} },
-            { name: 'Roto', formula: 'Blanco Titanio 95<br>Amarillo Medio 3<br>Azul Ultramar 2', components: {'Blanco Titanio': 95, 'Amarillo Medio': 3, 'Azul Ultramar': 2} },
-            { name: 'Platinado', formula: 'Blanco Titanio 96<br>Azul Ultramar 3<br>Magenta 1', components: {'Blanco Titanio': 96, 'Azul Ultramar': 3, 'Magenta': 1} },
+            { name: 'Perla', formula: 'Blanco Titanio 97\nAzul de Cobalto 2\nAmarillo Medio 1', components: {'Blanco Titanio': 97, 'Azul de Cobalto': 2, 'Amarillo Medio': 1} },
+            { name: 'Nacarado', formula: 'Blanco Titanio 95\nAzul de Cobalto 2\nAmarillo Medio 2\nRojo Medio 1', components: {'Blanco Titanio': 95, 'Azul de Cobalto': 2, 'Amarillo Medio': 2, 'Rojo Medio': 1} },
+            { name: 'Lechoso', formula: 'Blanco Titanio 99\nAmarillo Medio 1', components: {'Blanco Titanio': 99, 'Amarillo Medio': 1} },
+            { name: 'Roto', formula: 'Blanco Titanio 95\nAmarillo Medio 3\nAzul Ultramar 2', components: {'Blanco Titanio': 95, 'Amarillo Medio': 3, 'Azul Ultramar': 2} },
+            { name: 'Platinado', formula: 'Blanco Titanio 96\nAzul Ultramar 3\nMagenta 1', components: {'Blanco Titanio': 96, 'Azul Ultramar': 3, 'Magenta': 1} },
             { name: 'Algodón', formula: 'Blanco Titanio 100', components: {'Blanco Titanio': 100} },
-            { name: 'Almendra', formula: 'Blanco Titanio 94<br>Amarillo Medio 4<br>Rojo Medio 2', components: {'Blanco Titanio': 94, 'Amarillo Medio': 4, 'Rojo Medio': 2} },
-            { name: 'Lino', formula: 'Blanco Titanio 95<br>Amarillo Medio 3<br>Rojo Medio 2', components: {'Blanco Titanio': 95, 'Amarillo Medio': 3, 'Rojo Medio': 2} },
-            { name: 'Crudo', formula: 'Blanco Titanio 93<br>Amarillo Medio 5<br>Rojo Medio 2', components: {'Blanco Titanio': 93, 'Amarillo Medio': 5, 'Rojo Medio': 2} },
-            { name: 'Tiza', formula: 'Blanco Titanio 98<br>Azul Ultramar 2', components: {'Blanco Titanio': 98, 'Azul Ultramar': 2} },
-            { name: 'Crema', formula: 'Blanco Titanio 94<br>Amarillo Medio 5<br>Rojo Medio 1', components: {'Blanco Titanio': 94, 'Amarillo Medio': 5, 'Rojo Medio': 1} }
+            { name: 'Almendra', formula: 'Blanco Titanio 94\nAmarillo Medio 4\nRojo Medio 2', components: {'Blanco Titanio': 94, 'Amarillo Medio': 4, 'Rojo Medio': 2} },
+            { name: 'Lino', formula: 'Blanco Titanio 95\nAmarillo Medio 3\nRojo Medio 2', components: {'Blanco Titanio': 95, 'Amarillo Medio': 3, 'Rojo Medio': 2} },
+            { name: 'Crudo', formula: 'Blanco Titanio 93\nAmarillo Medio 5\nRojo Medio 2', components: {'Blanco Titanio': 93, 'Amarillo Medio': 5, 'Rojo Medio': 2} },
+            { name: 'Tiza', formula: 'Blanco Titanio 98\nAzul Ultramar 2', components: {'Blanco Titanio': 98, 'Azul Ultramar': 2} },
+            { name: 'Crema', formula: 'Blanco Titanio 94\nAmarillo Medio 5\nRojo Medio 1', components: {'Blanco Titanio': 94, 'Amarillo Medio': 5, 'Rojo Medio': 1} }
         ];
 
         function mixColors(components) {
