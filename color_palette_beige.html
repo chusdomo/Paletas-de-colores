@@ -11,6 +11,7 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
+            font-size: 115%; /* Aumentado un 15% */
         }
         
         .container {
@@ -26,7 +27,7 @@
             text-align: center;
             color: white;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 2.53em; /* Aumentado un 15% (2.2 * 1.15) */
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
             background: linear-gradient(135deg, #f5f5dc, #deb887);
             padding: 20px;
@@ -67,20 +68,21 @@
         }
         
         .color-name {
-            font-size: 2.2em;
+            font-size: 2.53em; /* Aumentado un 15% (2.2 * 1.15) */
             font-weight: bold;
             color: #333;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1.7em;
+            font-size: 1.955em; /* Aumentado un 15% (1.7 * 1.15) */
             color: #666;
-            line-height: 1.4;
+            line-height: 1.6;
             background: white;
             padding: 8px;
             border-radius: 6px;
             border-left: 3px solid #ddd;
+            white-space: pre-wrap; /* Mantiene los saltos de línea */
         }
         
         .hex-code {
@@ -92,7 +94,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1.6em;
+            font-size: 1.84em; /* Aumentado un 15% (1.6 * 1.15) */
             cursor: pointer;
             user-select: none;
         }
@@ -116,12 +118,8 @@
 <body>
     <div class="container">
         <h1>🤍 Paleta de Colores Beiges</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">
-            Vista previa de las mezclas de pigmentos con sus fórmulas exactas
-        </p>
-        
-        <div class="palette-grid" id="paletteGrid">
-        </div>
+
+        <div class="palette-grid" id="paletteGrid"></div>
     </div>
 
     <script>
@@ -129,22 +127,22 @@
         const baseColors = {
             'Rojo Medio': [220, 20, 20],
             'Amarillo Medio': [255, 215, 0],
-            'Azul Ultramar': [18, 10, 143],
-            'Blanco de Titanio': [255, 255, 255]
+            'Azul Cobalto': [0, 71, 171], // Cambiado de "Azul de Cobalto"
+            'Blanco Titanio': [255, 255, 255] // Cambiado de "Blanco de Titanio"
         };
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Beige', formula: 'Blanco de Titanio 80, Amarillo Medio 15, Rojo Medio 5', components: {'Blanco de Titanio': 80, 'Amarillo Medio': 15, 'Rojo Medio': 5} },
-            { name: 'Arena', formula: 'Blanco de Titanio 75, Amarillo Medio 20, Rojo Medio 5', components: {'Blanco de Titanio': 75, 'Amarillo Medio': 20, 'Rojo Medio': 5} },
-            { name: 'Crema', formula: 'Blanco de Titanio 85, Amarillo Medio 10, Rojo Medio 5', components: {'Blanco de Titanio': 85, 'Amarillo Medio': 10, 'Rojo Medio': 5} },
-            { name: 'Marfil', formula: 'Blanco de Titanio 90, Amarillo Medio 8, Rojo Medio 2', components: {'Blanco de Titanio': 90, 'Amarillo Medio': 8, 'Rojo Medio': 2} },
-            { name: 'Hueso', formula: 'Blanco de Titanio 95, Amarillo Medio 4, Rojo Medio 1', components: {'Blanco de Titanio': 95, 'Amarillo Medio': 4, 'Rojo Medio': 1} },
-            { name: 'Almendra', formula: 'Blanco de Titanio 80, Amarillo Medio 15, Rojo Medio 5', components: {'Blanco de Titanio': 80, 'Amarillo Medio': 15, 'Rojo Medio': 5} },
-            { name: 'Lino', formula: 'Blanco de Titanio 85, Amarillo Medio 12, Rojo Medio 3', components: {'Blanco de Titanio': 85, 'Amarillo Medio': 12, 'Rojo Medio': 3} },
-            { name: 'Champagne', formula: 'Blanco de Titanio 85, Amarillo Medio 13, Rojo Medio 2', components: {'Blanco de Titanio': 85, 'Amarillo Medio': 13, 'Rojo Medio': 2} },
-            { name: 'Vainilla', formula: 'Blanco de Titanio 80, Amarillo Medio 18, Rojo Medio 2', components: {'Blanco de Titanio': 80, 'Amarillo Medio': 18, 'Rojo Medio': 2} },
-            { name: 'Dorado', formula: 'Blanco de Titanio 70, Amarillo Medio 25, Rojo Medio 5', components: {'Blanco de Titanio': 70, 'Amarillo Medio': 25, 'Rojo Medio': 5} }
+            { name: 'Beige', formula: 'Blanco Titanio 80\nAmarillo Medio 15\nRojo Medio 5', components: {'Blanco Titanio': 80, 'Amarillo Medio': 15, 'Rojo Medio': 5} },
+            { name: 'Arena', formula: 'Blanco Titanio 75\nAmarillo Medio 20\nRojo Medio 5', components: {'Blanco Titanio': 75, 'Amarillo Medio': 20, 'Rojo Medio': 5} },
+            { name: 'Crema', formula: 'Blanco Titanio 85\nAmarillo Medio 10\nRojo Medio 5', components: {'Blanco Titanio': 85, 'Amarillo Medio': 10, 'Rojo Medio': 5} },
+            { name: 'Marfil', formula: 'Blanco Titanio 90\nAmarillo Medio 8\nRojo Medio 2', components: {'Blanco Titanio': 90, 'Amarillo Medio': 8, 'Rojo Medio': 2} },
+            { name: 'Hueso', formula: 'Blanco Titanio 95\nAmarillo Medio 4\nRojo Medio 1', components: {'Blanco Titanio': 95, 'Amarillo Medio': 4, 'Rojo Medio': 1} },
+            { name: 'Almendra', formula: 'Blanco Titanio 80\nAmarillo Medio 15\nRojo Medio 5', components: {'Blanco Titanio': 80, 'Amarillo Medio': 15, 'Rojo Medio': 5} },
+            { name: 'Lino', formula: 'Blanco Titanio 85\nAmarillo Medio 12\nRojo Medio 3', components: {'Blanco Titanio': 85, 'Amarillo Medio': 12, 'Rojo Medio': 3} },
+            { name: 'Champagne', formula: 'Blanco Titanio 85\nAmarillo Medio 13\nRojo Medio 2', components: {'Blanco Titanio': 85, 'Amarillo Medio': 13, 'Rojo Medio': 2} },
+            { name: 'Vainilla', formula: 'Blanco Titanio 80\nAmarillo Medio 18\nRojo Medio 2', components: {'Blanco Titanio': 80, 'Amarillo Medio': 18, 'Rojo Medio': 2} },
+            { name: 'Dorado', formula: 'Blanco Titanio 70\nAmarillo Medio 25\nRojo Medio 5', components: {'Blanco Titanio': 70, 'Amarillo Medio': 25, 'Rojo Medio': 5} }
         ];
 
         function mixColors(components) {
