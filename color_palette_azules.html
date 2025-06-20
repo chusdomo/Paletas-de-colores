@@ -127,35 +127,35 @@
         // Definición de colores base
         const baseColors = {
             'Azul Ultramar': [18, 10, 143],
-            'Azul de Cobalto': [0, 71, 171],
+            'Azul Cobalto': [0, 71, 171], // Cambiado de "Azul de Cobalto"
             'Magenta': [255, 0, 128],
             'Rojo Medio': [220, 20, 20],
             'Amarillo Medio': [255, 215, 0],
-            'Blanco de Titanio': [255, 255, 255]
+            'Blanco Titanio': [255, 255, 255] // Cambiado de "Blanco de Titanio"
         };
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Azul', formula: 'Azul Ultramar 50\nAzul de Cobalto 50', components: {'Azul Ultramar': 50, 'Azul de Cobalto': 50} },
-            { name: 'Arándano', formula: 'Azul Ultramar 50\nMagenta 30\nBlanco de Titanio 20', components: {'Azul Ultramar': 50, 'Magenta': 30, 'Blanco de Titanio': 20} },
-            { name: 'Celeste', formula: 'Azul de Cobalto 50\nBlanco de Titanio 50', components: {'Azul de Cobalto': 50, 'Blanco de Titanio': 50} },
-            { name: 'Cobalto', formula: 'Azul de Cobalto 100', components: {'Azul de Cobalto': 100} },
-            { name: 'Eléctrico', formula: 'Azul Ultramar 60\nAzul de Cobalto 30\nBlanco de Titanio 10', components: {'Azul Ultramar': 60, 'Azul de Cobalto': 30, 'Blanco de Titanio': 10} },
+            { name: 'Azul', formula: 'Azul Ultramar 50\nAzul Cobalto 50', components: {'Azul Ultramar': 50, 'Azul Cobalto': 50} },
+            { name: 'Arándano', formula: 'Azul Ultramar 50\nMagenta 30\nBlanco Titanio 20', components: {'Azul Ultramar': 50, 'Magenta': 30, 'Blanco Titanio': 20} },
+            { name: 'Celeste', formula: 'Azul Cobalto 50\nBlanco Titanio 50', components: {'Azul Cobalto': 50, 'Blanco Titanio': 50} },
+            { name: 'Cobalto', formula: 'Azul Cobalto 100', components: {'Azul Cobalto': 100} },
+            { name: 'Eléctrico', formula: 'Azul Ultramar 60\nAzul Cobalto 30\nBlanco Titanio 10', components: {'Azul Ultramar': 60, 'Azul Cobalto': 30, 'Blanco Titanio': 10} },
             { name: 'Índigo', formula: 'Azul Ultramar 70\nMagenta 30', components: {'Azul Ultramar': 70, 'Magenta': 30} },
-            { name: 'Klein', formula: 'Azul Ultramar 90\nBlanco de Titanio 10', components: {'Azul Ultramar': 90, 'Blanco de Titanio': 10} },
+            { name: 'Klein', formula: 'Azul Ultramar 90\nBlanco Titanio 10', components: {'Azul Ultramar': 90, 'Blanco Titanio': 10} },
             { name: 'Marino', formula: 'Azul Ultramar 80\nRojo Medio 10\nMagenta 10', components: {'Azul Ultramar': 80, 'Rojo Medio': 10, 'Magenta': 10} },
-            { name: 'Pastel', formula: 'Azul de Cobalto 40\nBlanco de Titanio 60', components: {'Azul de Cobalto': 40, 'Blanco de Titanio': 60} },
+            { name: 'Pastel', formula: 'Azul Cobalto 40\nBlanco Titanio 60', components: {'Azul Cobalto': 40, 'Blanco Titanio': 60} },
             { name: 'Petróleo', formula: 'Azul Ultramar 50\nAmarillo Medio 30\nRojo Medio 20', components: {'Azul Ultramar': 50, 'Amarillo Medio': 30, 'Rojo Medio': 20} },
-            { name: 'Turquesa', formula: 'Azul de Cobalto 50\nAmarillo Medio 35\nBlanco de Titanio 15', components: {'Azul de Cobalto': 50, 'Amarillo Medio': 35, 'Blanco de Titanio': 15} },
-            { name: 'Zafiro', formula: 'Azul Ultramar 80\nBlanco de Titanio 20', components: {'Azul Ultramar': 80, 'Blanco de Titanio': 20} },
-            { name: 'Denim', formula: 'Azul Ultramar 65\nRojo Medio 15\nBlanco de Titanio 20', components: {'Azul Ultramar': 65, 'Rojo Medio': 15, 'Blanco de Titanio': 20} },
-            { name: 'Pizarra', formula: 'Azul Ultramar 50\nRojo Medio 20\nBlanco de Titanio 30', components: {'Azul Ultramar': 50, 'Rojo Medio': 20, 'Blanco de Titanio': 30} },
+            { name: 'Turquesa', formula: 'Azul Cobalto 50\nAmarillo Medio 35\nBlanco Titanio 15', components: {'Azul Cobalto': 50, 'Amarillo Medio': 35, 'Blanco Titanio': 15} },
+            { name: 'Zafiro', formula: 'Azul Ultramar 80\nBlanco Titanio 20', components: {'Azul Ultramar': 80, 'Blanco Titanio': 20} },
+            { name: 'Denim', formula: 'Azul Ultramar 65\nRojo Medio 15\nBlanco Titanio 20', components: {'Azul Ultramar': 65, 'Rojo Medio': 15, 'Blanco Titanio': 20} },
+            { name: 'Pizarra', formula: 'Azul Ultramar 50\nRojo Medio 20\nBlanco Titanio 30', components: {'Azul Ultramar': 50, 'Rojo Medio': 20, 'Blanco Titanio': 30} },
             { name: 'Prusia', formula: 'Azul Ultramar 90\nRojo Medio 10', components: {'Azul Ultramar': 90, 'Rojo Medio': 10} },
-            { name: 'Acero', formula: 'Azul Ultramar 40\nBlanco de Titanio 30\nRojo Medio 30', components: {'Azul Ultramar': 40, 'Blanco de Titanio': 30, 'Rojo Medio': 30} },
-            { name: 'Real', formula: 'Azul Ultramar 75\nBlanco de Titanio 25', components: {'Azul Ultramar': 75, 'Blanco de Titanio': 25} },
-            { name: 'Atlántico', formula: 'Azul Ultramar 70\nBlanco de Titanio 30', components: {'Azul Ultramar': 70, 'Blanco de Titanio': 30} },
-            { name: 'Cadete', formula: 'Azul Ultramar 50\nAmarillo Medio 20\nBlanco de Titanio 30', components: {'Azul Ultramar': 50, 'Amarillo Medio': 20, 'Blanco de Titanio': 30} },
-            { name: 'Tifón', formula: 'Azul Ultramar 60\nRojo Medio 20\nBlanco de Titanio 20', components: {'Azul Ultramar': 60, 'Rojo Medio': 20, 'Blanco de Titanio': 20} }
+            { name: 'Acero', formula: 'Azul Ultramar 40\nBlanco Titanio 30\nRojo Medio 30', components: {'Azul Ultramar': 40, 'Blanco Titanio': 30, 'Rojo Medio': 30} },
+            { name: 'Real', formula: 'Azul Ultramar 75\nBlanco Titanio 25', components: {'Azul Ultramar': 75, 'Blanco Titanio': 25} },
+            { name: 'Atlántico', formula: 'Azul Ultramar 70\nBlanco Titanio 30', components: {'Azul Ultramar': 70, 'Blanco Titanio': 30} },
+            { name: 'Cadete', formula: 'Azul Ultramar 50\nAmarillo Medio 20\nBlanco Titanio 30', components: {'Azul Ultramar': 50, 'Amarillo Medio': 20, 'Blanco Titanio': 30} },
+            { name: 'Tifón', formula: 'Azul Ultramar 60\nRojo Medio 20\nBlanco Titanio 20', components: {'Azul Ultramar': 60, 'Rojo Medio': 20, 'Blanco Titanio': 20} }
         ];
 
         function mixColors(components) {
