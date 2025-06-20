@@ -11,6 +11,7 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
+            font-size: 115%; /* Aumentado un 15% */
         }
         
         .container {
@@ -26,7 +27,7 @@
             text-align: center;
             color: #333;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 2.53em; /* Aumentado un 15% (2.2 * 1.15) */
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
             background: linear-gradient(45deg, #1976d2, #42a5f5);
             -webkit-background-clip: text;
@@ -68,20 +69,21 @@
         }
         
         .color-name {
-            font-size: 1.5em;
+            font-size: 1.725em; /* Aumentado un 15% (1.5 * 1.15) */
             font-weight: bold;
             color: #0d47a1;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1em;
+            font-size: 1.15em; /* Aumentado un 15% (1.0 * 1.15) */
             color: #666;
-            line-height: 1.4;
+            line-height: 1.6;
             background: white;
             padding: 8px;
             border-radius: 6px;
             border-left: 3px solid #42a5f5;
+            white-space: pre-wrap; /* Mantiene los saltos de línea */
         }
         
         .hex-code {
@@ -93,16 +95,9 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1em;
+            font-size: 1.15em; /* Opcional: aumentado un 15% */
             cursor: pointer;
             user-select: none;
-        }
-
-        .subtitle {
-            text-align: center; 
-            color: #0d47a1; 
-            margin-bottom: 30px;
-            font-style: italic;
         }
 
         /* Notificación */
@@ -124,12 +119,8 @@
 <body>
     <div class="container">
         <h1>🌊 Paleta de Colores Azules</h1>
-        <p class="subtitle">
-            Vista previa de las mezclas de pigmentos azules con sus fórmulas exactas
-        </p>
-        
-        <div class="palette-grid" id="paletteGrid">
-        </div>
+
+        <div class="palette-grid" id="paletteGrid"></div>
     </div>
 
     <script>
@@ -145,26 +136,26 @@
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Azul', formula: 'Azul Ultramar 50, Azul de Cobalto 50', components: {'Azul Ultramar': 50, 'Azul de Cobalto': 50} },
-            { name: 'Arándano', formula: 'Azul Ultramar 50, Magenta 30, Blanco de Titanio 20', components: {'Azul Ultramar': 50, 'Magenta': 30, 'Blanco de Titanio': 20} },
-            { name: 'Celeste', formula: 'Azul de Cobalto 50, Blanco de Titanio 50', components: {'Azul de Cobalto': 50, 'Blanco de Titanio': 50} },
+            { name: 'Azul', formula: 'Azul Ultramar 50\nAzul de Cobalto 50', components: {'Azul Ultramar': 50, 'Azul de Cobalto': 50} },
+            { name: 'Arándano', formula: 'Azul Ultramar 50\nMagenta 30\nBlanco de Titanio 20', components: {'Azul Ultramar': 50, 'Magenta': 30, 'Blanco de Titanio': 20} },
+            { name: 'Celeste', formula: 'Azul de Cobalto 50\nBlanco de Titanio 50', components: {'Azul de Cobalto': 50, 'Blanco de Titanio': 50} },
             { name: 'Cobalto', formula: 'Azul de Cobalto 100', components: {'Azul de Cobalto': 100} },
-            { name: 'Eléctrico', formula: 'Azul Ultramar 60, Azul de Cobalto 30, Blanco de Titanio 10', components: {'Azul Ultramar': 60, 'Azul de Cobalto': 30, 'Blanco de Titanio': 10} },
-            { name: 'Índigo', formula: 'Azul Ultramar 70, Magenta 30', components: {'Azul Ultramar': 70, 'Magenta': 30} },
-            { name: 'Klein', formula: 'Azul Ultramar 90, Blanco de Titanio 10', components: {'Azul Ultramar': 90, 'Blanco de Titanio': 10} },
-            { name: 'Marino', formula: 'Azul Ultramar 80, Rojo Medio 10, Magenta 10', components: {'Azul Ultramar': 80, 'Rojo Medio': 10, 'Magenta': 10} },
-            { name: 'Pastel', formula: 'Azul de Cobalto 40, Blanco de Titanio 60', components: {'Azul de Cobalto': 40, 'Blanco de Titanio': 60} },
-            { name: 'Petróleo', formula: 'Azul Ultramar 50, Amarillo Medio 30, Rojo Medio 20', components: {'Azul Ultramar': 50, 'Amarillo Medio': 30, 'Rojo Medio': 20} },
-            { name: 'Turquesa', formula: 'Azul de Cobalto 50, Amarillo Medio 35, Blanco de Titanio 15', components: {'Azul de Cobalto': 50, 'Amarillo Medio': 35, 'Blanco de Titanio': 15} },
-            { name: 'Zafiro', formula: 'Azul Ultramar 80, Blanco de Titanio 20', components: {'Azul Ultramar': 80, 'Blanco de Titanio': 20} },
-            { name: 'Denim', formula: 'Azul Ultramar 65, Rojo Medio 15, Blanco de Titanio 20', components: {'Azul Ultramar': 65, 'Rojo Medio': 15, 'Blanco de Titanio': 20} },
-            { name: 'Pizarra', formula: 'Azul Ultramar 50, Rojo Medio 20, Blanco de Titanio 30', components: {'Azul Ultramar': 50, 'Rojo Medio': 20, 'Blanco de Titanio': 30} },
-            { name: 'Prusia', formula: 'Azul Ultramar 90, Rojo Medio 10', components: {'Azul Ultramar': 90, 'Rojo Medio': 10} },
-            { name: 'Acero', formula: 'Azul Ultramar 40, Blanco de Titanio 30, Rojo Medio 30', components: {'Azul Ultramar': 40, 'Blanco de Titanio': 30, 'Rojo Medio': 30} },
-            { name: 'Real', formula: 'Azul Ultramar 75, Blanco de Titanio 25', components: {'Azul Ultramar': 75, 'Blanco de Titanio': 25} },
-            { name: 'Atlántico', formula: 'Azul Ultramar 70, Blanco de Titanio 30', components: {'Azul Ultramar': 70, 'Blanco de Titanio': 30} },
-            { name: 'Cadete', formula: 'Azul Ultramar 50, Amarillo Medio 20, Blanco de Titanio 30', components: {'Azul Ultramar': 50, 'Amarillo Medio': 20, 'Blanco de Titanio': 30} },
-            { name: 'Tifón', formula: 'Azul Ultramar 60, Rojo Medio 20, Blanco de Titanio 20', components: {'Azul Ultramar': 60, 'Rojo Medio': 20, 'Blanco de Titanio': 20} }
+            { name: 'Eléctrico', formula: 'Azul Ultramar 60\nAzul de Cobalto 30\nBlanco de Titanio 10', components: {'Azul Ultramar': 60, 'Azul de Cobalto': 30, 'Blanco de Titanio': 10} },
+            { name: 'Índigo', formula: 'Azul Ultramar 70\nMagenta 30', components: {'Azul Ultramar': 70, 'Magenta': 30} },
+            { name: 'Klein', formula: 'Azul Ultramar 90\nBlanco de Titanio 10', components: {'Azul Ultramar': 90, 'Blanco de Titanio': 10} },
+            { name: 'Marino', formula: 'Azul Ultramar 80\nRojo Medio 10\nMagenta 10', components: {'Azul Ultramar': 80, 'Rojo Medio': 10, 'Magenta': 10} },
+            { name: 'Pastel', formula: 'Azul de Cobalto 40\nBlanco de Titanio 60', components: {'Azul de Cobalto': 40, 'Blanco de Titanio': 60} },
+            { name: 'Petróleo', formula: 'Azul Ultramar 50\nAmarillo Medio 30\nRojo Medio 20', components: {'Azul Ultramar': 50, 'Amarillo Medio': 30, 'Rojo Medio': 20} },
+            { name: 'Turquesa', formula: 'Azul de Cobalto 50\nAmarillo Medio 35\nBlanco de Titanio 15', components: {'Azul de Cobalto': 50, 'Amarillo Medio': 35, 'Blanco de Titanio': 15} },
+            { name: 'Zafiro', formula: 'Azul Ultramar 80\nBlanco de Titanio 20', components: {'Azul Ultramar': 80, 'Blanco de Titanio': 20} },
+            { name: 'Denim', formula: 'Azul Ultramar 65\nRojo Medio 15\nBlanco de Titanio 20', components: {'Azul Ultramar': 65, 'Rojo Medio': 15, 'Blanco de Titanio': 20} },
+            { name: 'Pizarra', formula: 'Azul Ultramar 50\nRojo Medio 20\nBlanco de Titanio 30', components: {'Azul Ultramar': 50, 'Rojo Medio': 20, 'Blanco de Titanio': 30} },
+            { name: 'Prusia', formula: 'Azul Ultramar 90\nRojo Medio 10', components: {'Azul Ultramar': 90, 'Rojo Medio': 10} },
+            { name: 'Acero', formula: 'Azul Ultramar 40\nBlanco de Titanio 30\nRojo Medio 30', components: {'Azul Ultramar': 40, 'Blanco de Titanio': 30, 'Rojo Medio': 30} },
+            { name: 'Real', formula: 'Azul Ultramar 75\nBlanco de Titanio 25', components: {'Azul Ultramar': 75, 'Blanco de Titanio': 25} },
+            { name: 'Atlántico', formula: 'Azul Ultramar 70\nBlanco de Titanio 30', components: {'Azul Ultramar': 70, 'Blanco de Titanio': 30} },
+            { name: 'Cadete', formula: 'Azul Ultramar 50\nAmarillo Medio 20\nBlanco de Titanio 30', components: {'Azul Ultramar': 50, 'Amarillo Medio': 20, 'Blanco de Titanio': 30} },
+            { name: 'Tifón', formula: 'Azul Ultramar 60\nRojo Medio 20\nBlanco de Titanio 20', components: {'Azul Ultramar': 60, 'Rojo Medio': 20, 'Blanco de Titanio': 20} }
         ];
 
         function mixColors(components) {
