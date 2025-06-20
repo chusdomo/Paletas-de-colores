@@ -26,7 +26,7 @@
             text-align: center;
             color: white;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 2.53em;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
             background: linear-gradient(135deg, #8b4513, #a0522d);
             padding: 20px;
@@ -67,16 +67,16 @@
         }
         
         .color-name {
-            font-size: 2.2em;
+            font-size: 2.53em;
             font-weight: bold;
             color: #333;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1.7em;
+            font-size: 1.96em;
             color: #666;
-            line-height: 1.4;
+            line-height: 1.6;
             background: white;
             padding: 8px;
             border-radius: 6px;
@@ -92,7 +92,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1.6em;
+            font-size: 1.84em;
             cursor: pointer;
             user-select: none;
         }
@@ -116,9 +116,6 @@
 <body>
     <div class="container">
         <h1>🤎 Paleta de Colores Marrones</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">
-            Vista previa de las mezclas de pigmentos con sus fórmulas exactas
-        </p>
         
         <div class="palette-grid" id="paletteGrid">
         </div>
@@ -130,21 +127,21 @@
             'Rojo Medio': [220, 20, 20],
             'Amarillo Medio': [255, 215, 0],
             'Azul Ultramar': [18, 10, 143],
-            'Blanco de Titanio': [255, 255, 255]
+            'Blanco Titanio': [255, 255, 255]
         };
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Marrón', formula: 'Rojo Medio 40, Amarillo Medio 30, Azul Ultramar 30', components: {'Rojo Medio': 40, 'Amarillo Medio': 30, 'Azul Ultramar': 30} },
-            { name: 'Chocolate', formula: 'Rojo Medio 45, Amarillo Medio 25, Azul Ultramar 30', components: {'Rojo Medio': 45, 'Amarillo Medio': 25, 'Azul Ultramar': 30} },
-            { name: 'Tierra', formula: 'Rojo Medio 40, Amarillo Medio 35, Azul Ultramar 25', components: {'Rojo Medio': 40, 'Amarillo Medio': 35, 'Azul Ultramar': 25} },
-            { name: 'Sombra', formula: 'Rojo Medio 35, Amarillo Medio 30, Azul Ultramar 35', components: {'Rojo Medio': 35, 'Amarillo Medio': 30, 'Azul Ultramar': 35} },
-            { name: 'Siena', formula: 'Rojo Medio 45, Amarillo Medio 40, Azul Ultramar 15', components: {'Rojo Medio': 45, 'Amarillo Medio': 40, 'Azul Ultramar': 15} },
-            { name: 'Ocre', formula: 'Amarillo Medio 50, Rojo Medio 30, Azul Ultramar 20', components: {'Amarillo Medio': 50, 'Rojo Medio': 30, 'Azul Ultramar': 20} },
-            { name: 'Avellana', formula: 'Rojo Medio 40, Amarillo Medio 35, Azul Ultramar 15, Blanco de Titanio 10', components: {'Rojo Medio': 40, 'Amarillo Medio': 35, 'Azul Ultramar': 15, 'Blanco de Titanio': 10} },
-            { name: 'Café', formula: 'Rojo Medio 40, Amarillo Medio 30, Azul Ultramar 25, Blanco de Titanio 5', components: {'Rojo Medio': 40, 'Amarillo Medio': 30, 'Azul Ultramar': 25, 'Blanco de Titanio': 5} },
-            { name: 'Canela', formula: 'Rojo Medio 35, Amarillo Medio 40, Azul Ultramar 15, Blanco de Titanio 10', components: {'Rojo Medio': 35, 'Amarillo Medio': 40, 'Azul Ultramar': 15, 'Blanco de Titanio': 10} },
-            { name: 'Madera', formula: 'Rojo Medio 35, Amarillo Medio 35, Azul Ultramar 20, Blanco de Titanio 10', components: {'Rojo Medio': 35, 'Amarillo Medio': 35, 'Azul Ultramar': 20, 'Blanco de Titanio': 10} }
+            { name: 'Marrón', formula: 'Rojo Medio 40<br>Amarillo Medio 30<br>Azul Ultramar 30', components: {'Rojo Medio': 40, 'Amarillo Medio': 30, 'Azul Ultramar': 30} },
+            { name: 'Chocolate', formula: 'Rojo Medio 45<br>Amarillo Medio 25<br>Azul Ultramar 30', components: {'Rojo Medio': 45, 'Amarillo Medio': 25, 'Azul Ultramar': 30} },
+            { name: 'Tierra', formula: 'Rojo Medio 40<br>Amarillo Medio 35<br>Azul Ultramar 25', components: {'Rojo Medio': 40, 'Amarillo Medio': 35, 'Azul Ultramar': 25} },
+            { name: 'Sombra', formula: 'Rojo Medio 35<br>Amarillo Medio 30<br>Azul Ultramar 35', components: {'Rojo Medio': 35, 'Amarillo Medio': 30, 'Azul Ultramar': 35} },
+            { name: 'Siena', formula: 'Rojo Medio 45<br>Amarillo Medio 40<br>Azul Ultramar 15', components: {'Rojo Medio': 45, 'Amarillo Medio': 40, 'Azul Ultramar': 15} },
+            { name: 'Ocre', formula: 'Amarillo Medio 50<br>Rojo Medio 30<br>Azul Ultramar 20', components: {'Amarillo Medio': 50, 'Rojo Medio': 30, 'Azul Ultramar': 20} },
+            { name: 'Avellana', formula: 'Rojo Medio 40<br>Amarillo Medio 35<br>Azul Ultramar 15<br>Blanco Titanio 10', components: {'Rojo Medio': 40, 'Amarillo Medio': 35, 'Azul Ultramar': 15, 'Blanco Titanio': 10} },
+            { name: 'Café', formula: 'Rojo Medio 40<br>Amarillo Medio 30<br>Azul Ultramar 25<br>Blanco Titanio 5', components: {'Rojo Medio': 40, 'Amarillo Medio': 30, 'Azul Ultramar': 25, 'Blanco Titanio': 5} },
+            { name: 'Canela', formula: 'Rojo Medio 35<br>Amarillo Medio 40<br>Azul Ultramar 15<br>Blanco Titanio 10', components: {'Rojo Medio': 35, 'Amarillo Medio': 40, 'Azul Ultramar': 15, 'Blanco Titanio': 10} },
+            { name: 'Madera', formula: 'Rojo Medio 35<br>Amarillo Medio 35<br>Azul Ultramar 20<br>Blanco Titanio 10', components: {'Rojo Medio': 35, 'Amarillo Medio': 35, 'Azul Ultramar': 20, 'Blanco Titanio': 10} }
         ];
 
         function mixColors(components) {
