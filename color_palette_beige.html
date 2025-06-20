@@ -11,7 +11,6 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
-            font-size: 115%; /* Aumentado un 15% */
         }
         
         .container {
@@ -27,7 +26,7 @@
             text-align: center;
             color: white;
             margin-bottom: 30px;
-            font-size: 2.53em; /* Aumentado un 15% (2.2 * 1.15) */
+            font-size: 2.53em; /* Aumentado un 15% */
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
             background: linear-gradient(135deg, #f5f5dc, #deb887);
             padding: 20px;
@@ -68,21 +67,21 @@
         }
         
         .color-name {
-            font-size: 2.53em; /* Aumentado un 15% (2.2 * 1.15) */
+            font-size: 2.53em; /* Aumentado un 15% */
             font-weight: bold;
             color: #333;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1.955em; /* Aumentado un 15% (1.7 * 1.15) */
+            font-size: 1.955em; /* Aumentado un 15% */
             color: #666;
-            line-height: 1.6;
+            line-height: 1.4;
             background: white;
             padding: 8px;
             border-radius: 6px;
             border-left: 3px solid #ddd;
-            white-space: pre-wrap; /* Mantiene los saltos de línea */
+            white-space: pre-line; /* Permite saltos de línea */
         }
         
         .hex-code {
@@ -94,7 +93,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1.84em; /* Aumentado un 15% (1.6 * 1.15) */
+            font-size: 1.6em;
             cursor: pointer;
             user-select: none;
         }
@@ -119,7 +118,8 @@
     <div class="container">
         <h1>🤍 Paleta de Colores Beiges</h1>
 
-        <div class="palette-grid" id="paletteGrid"></div>
+        <div class="palette-grid" id="paletteGrid">
+        </div>
     </div>
 
     <script>
@@ -127,8 +127,8 @@
         const baseColors = {
             'Rojo Medio': [220, 20, 20],
             'Amarillo Medio': [255, 215, 0],
-            'Azul Cobalto': [0, 71, 171], // Cambiado de "Azul de Cobalto"
-            'Blanco Titanio': [255, 255, 255] // Cambiado de "Blanco de Titanio"
+            'Azul Cobalto': [18, 10, 143], // Cambiado "Azul de Cobalto"
+            'Blanco Titanio': [255, 255, 255] // Cambiado "Blanco de Titanio"
         };
 
         // Definición de las mezclas
