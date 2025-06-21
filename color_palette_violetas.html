@@ -26,7 +26,7 @@
             text-align: center;
             color: white;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 2.09em;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
             background: linear-gradient(135deg, #8a2be2, #9370db);
             padding: 20px;
@@ -67,14 +67,14 @@
         }
         
         .color-name {
-            font-size: 2.2em;
+            font-size: 2.09em;
             font-weight: bold;
             color: #333;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1.7em;
+            font-size: 1.615em;
             color: #666;
             line-height: 1.4;
             background: white;
@@ -92,7 +92,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1.6em;
+            font-size: 1.52em;
             cursor: pointer;
             user-select: none;
         }
@@ -116,9 +116,6 @@
 <body>
     <div class="container">
         <h1>💜 Paleta de Colores Violetas</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">
-            Vista previa de las mezclas de pigmentos con sus fórmulas exactas
-        </p>
         
         <div class="palette-grid" id="paletteGrid">
         </div>
@@ -129,21 +126,21 @@
         const baseColors = {
             'Magenta': [255, 0, 255],
             'Azul Ultramar': [18, 10, 143],
-            'Blanco de Titanio': [255, 255, 255]
+            'Blanco Titanio': [255, 255, 255]
         };
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Violeta', formula: 'Magenta 60, Azul Ultramar 40', components: {'Magenta': 60, 'Azul Ultramar': 40} },
-            { name: 'Pastel', formula: 'Magenta 30, Azul Ultramar 20, Blanco de Titanio 50', components: {'Magenta': 30, 'Azul Ultramar': 20, 'Blanco de Titanio': 50} },
-            { name: 'Lila', formula: 'Magenta 40, Azul Ultramar 20, Blanco de Titanio 40', components: {'Magenta': 40, 'Azul Ultramar': 20, 'Blanco de Titanio': 40} },
-            { name: 'Lavanda', formula: 'Magenta 35, Azul Ultramar 15, Blanco de Titanio 50', components: {'Magenta': 35, 'Azul Ultramar': 15, 'Blanco de Titanio': 50} },
-            { name: 'Orquídea', formula: 'Magenta 50, Azul Ultramar 30, Blanco de Titanio 20', components: {'Magenta': 50, 'Azul Ultramar': 30, 'Blanco de Titanio': 20} },
-            { name: 'Malva', formula: 'Magenta 45, Azul Ultramar 25, Blanco de Titanio 30', components: {'Magenta': 45, 'Azul Ultramar': 25, 'Blanco de Titanio': 30} },
-            { name: 'Berenjena', formula: 'Magenta 40, Azul Ultramar 50, Blanco de Titanio 10', components: {'Magenta': 40, 'Azul Ultramar': 50, 'Blanco de Titanio': 10} },
-            { name: 'Uva', formula: 'Magenta 35, Azul Ultramar 55, Blanco de Titanio 10', components: {'Magenta': 35, 'Azul Ultramar': 55, 'Blanco de Titanio': 10} },
-            { name: 'Amatista', formula: 'Magenta 50, Azul Ultramar 40, Blanco de Titanio 10', components: {'Magenta': 50, 'Azul Ultramar': 40, 'Blanco de Titanio': 10} },
-            { name: 'Ciruela', formula: 'Magenta 30, Azul Ultramar 60, Blanco de Titanio 10', components: {'Magenta': 30, 'Azul Ultramar': 60, 'Blanco de Titanio': 10} }
+            { name: 'Violeta', formula: 'Magenta: 60\nAzul Ultramar: 40', components: {'Magenta': 60, 'Azul Ultramar': 40} },
+            { name: 'Pastel', formula: 'Magenta: 30\nAzul Ultramar: 20\nBlanco Titanio: 50', components: {'Magenta': 30, 'Azul Ultramar': 20, 'Blanco Titanio': 50} },
+            { name: 'Lila', formula: 'Magenta: 40\nAzul Ultramar: 20\nBlanco Titanio: 40', components: {'Magenta': 40, 'Azul Ultramar': 20, 'Blanco Titanio': 40} },
+            { name: 'Lavanda', formula: 'Magenta: 35\nAzul Ultramar: 15\nBlanco Titanio: 50', components: {'Magenta': 35, 'Azul Ultramar': 15, 'Blanco Titanio': 50} },
+            { name: 'Orquídea', formula: 'Magenta: 50\nAzul Ultramar: 30\nBlanco Titanio: 20', components: {'Magenta': 50, 'Azul Ultramar': 30, 'Blanco Titanio': 20} },
+            { name: 'Malva', formula: 'Magenta: 45\nAzul Ultramar: 25\nBlanco Titanio: 30', components: {'Magenta': 45, 'Azul Ultramar': 25, 'Blanco Titanio': 30} },
+            { name: 'Berenjena', formula: 'Magenta: 40\nAzul Ultramar: 50\nBlanco Titanio: 10', components: {'Magenta': 40, 'Azul Ultramar': 50, 'Blanco Titanio': 10} },
+            { name: 'Uva', formula: 'Magenta: 35\nAzul Ultramar: 55\nBlanco Titanio: 10', components: {'Magenta': 35, 'Azul Ultramar': 55, 'Blanco Titanio': 10} },
+            { name: 'Amatista', formula: 'Magenta: 50\nAzul Ultramar: 40\nBlanco Titanio: 10', components: {'Magenta': 50, 'Azul Ultramar': 40, 'Blanco Titanio': 10} },
+            { name: 'Ciruela', formula: 'Magenta: 30\nAzul Ultramar: 60\nBlanco Titanio: 10', components: {'Magenta': 30, 'Azul Ultramar': 60, 'Blanco Titanio': 10} }
         ];
 
         function mixColors(components) {
@@ -173,6 +170,7 @@
             const [r, g, b] = mixColors(colorData.components);
             const hexColor = rgbToHex(r, g, b);
             const rgbString = `rgb(${r}, ${g}, ${b})`;
+            const formulaWithBreaks = colorData.formula.replace(/\n/g, '<br>');
 
             return `
                 <div class="color-card">
@@ -181,7 +179,7 @@
                     </div>
                     <div class="color-info">
                         <div class="color-name">${colorData.name}</div>
-                        <div class="color-formula">${colorData.formula}</div>
+                        <div class="color-formula">${formulaWithBreaks}</div>
                     </div>
                 </div>
             `;
