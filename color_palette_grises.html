@@ -26,7 +26,7 @@
             text-align: center;
             color: #333;
             margin-bottom: 30px;
-            font-size: 2.53em;
+            font-size: 2.2em;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
         
@@ -63,14 +63,14 @@
         }
         
         .color-name {
-            font-size: 2.53em;
+            font-size: 2.2em;
             font-weight: bold;
             color: #333;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1.955em;
+            font-size: 1.7em;
             color: #666;
             line-height: 1.4;
             background: white;
@@ -88,7 +88,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1.84em;
+            font-size: 1.6em;
             cursor: pointer;
             user-select: none;
         }
@@ -128,16 +128,16 @@
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Gris', formula: 'Blanco Titanio 50<br>Azul Ultramar 25<br>Rojo Medio 25', components: {'Blanco Titanio': 50, 'Azul Ultramar': 25, 'Rojo Medio': 25} },
-            { name: 'Carbón', formula: 'Azul Ultramar 40<br>Rojo Medio 40<br>Amarillo Medio 20', components: {'Azul Ultramar': 40, 'Rojo Medio': 40, 'Amarillo Medio': 20} },
-            { name: 'Ceniza', formula: 'Blanco Titanio 60<br>Azul Ultramar 20<br>Rojo Medio 20', components: {'Blanco Titanio': 60, 'Azul Ultramar': 20, 'Rojo Medio': 20} },
-            { name: 'Perla', formula: 'Blanco Titanio 70<br>Azul Ultramar 15<br>Rojo Medio 15', components: {'Blanco Titanio': 70, 'Azul Ultramar': 15, 'Rojo Medio': 15} },
-            { name: 'Plata', formula: 'Blanco Titanio 80<br>Azul Ultramar 10<br>Rojo Medio 10', components: {'Blanco Titanio': 80, 'Azul Ultramar': 10, 'Rojo Medio': 10} },
-            { name: 'Plomo', formula: 'Azul Ultramar 35<br>Rojo Medio 35<br>Blanco Titanio 30', components: {'Azul Ultramar': 35, 'Rojo Medio': 35, 'Blanco Titanio': 30} },
-            { name: 'Cemento', formula: 'Blanco Titanio 65<br>Azul Ultramar 20<br>Rojo Medio 15', components: {'Blanco Titanio': 65, 'Azul Ultramar': 20, 'Rojo Medio': 15} },
-            { name: 'Niebla', formula: 'Blanco Titanio 75<br>Azul Ultramar 15<br>Rojo Medio 10', components: {'Blanco Titanio': 75, 'Azul Ultramar': 15, 'Rojo Medio': 10} },
-            { name: 'Acero', formula: 'Blanco Titanio 55<br>Azul Ultramar 25<br>Rojo Medio 20', components: {'Blanco Titanio': 55, 'Azul Ultramar': 25, 'Rojo Medio': 20} },
-            { name: 'Azulado', formula: 'Blanco Titanio 60<br>Azul Ultramar 30<br>Rojo Medio 10', components: {'Blanco Titanio': 60, 'Azul Ultramar': 30, 'Rojo Medio': 10} }
+            { name: 'Gris', formula: 'Blanco Titanio 50\nAzul Ultramar 25\nRojo Medio 25', components: {'Blanco Titanio': 50, 'Azul Ultramar': 25, 'Rojo Medio': 25} },
+            { name: 'Carbón', formula: 'Azul Ultramar 40\nRojo Medio 40\nAmarillo Medio 20', components: {'Azul Ultramar': 40, 'Rojo Medio': 40, 'Amarillo Medio': 20} },
+            { name: 'Ceniza', formula: 'Blanco Titanio 60\nAzul Ultramar 20\nRojo Medio 20', components: {'Blanco Titanio': 60, 'Azul Ultramar': 20, 'Rojo Medio': 20} },
+            { name: 'Perla', formula: 'Blanco Titanio 70\nAzul Ultramar 15\nRojo Medio 15', components: {'Blanco Titanio': 70, 'Azul Ultramar': 15, 'Rojo Medio': 15} },
+            { name: 'Plata', formula: 'Blanco Titanio 80\nAzul Ultramar 10\nRojo Medio 10', components: {'Blanco Titanio': 80, 'Azul Ultramar': 10, 'Rojo Medio': 10} },
+            { name: 'Plomo', formula: 'Azul Ultramar 35\nRojo Medio 35\nBlanco Titanio 30', components: {'Azul Ultramar': 35, 'Rojo Medio': 35, 'Blanco Titanio': 30} },
+            { name: 'Cemento', formula: 'Blanco Titanio 65\nAzul Ultramar 20\nRojo Medio 15', components: {'Blanco Titanio': 65, 'Azul Ultramar': 20, 'Rojo Medio': 15} },
+            { name: 'Niebla', formula: 'Blanco Titanio 75\nAzul Ultramar 15\nRojo Medio 10', components: {'Blanco Titanio': 75, 'Azul Ultramar': 15, 'Rojo Medio': 10} },
+            { name: 'Acero', formula: 'Blanco Titanio 55\nAzul Ultramar 25\nRojo Medio 20', components: {'Blanco Titanio': 55, 'Azul Ultramar': 25, 'Rojo Medio': 20} },
+            { name: 'Azulado', formula: 'Blanco Titanio 60\nAzul Ultramar 30\nRojo Medio 10', components: {'Blanco Titanio': 60, 'Azul Ultramar': 30, 'Rojo Medio': 10} }
         ];
 
         function mixColors(components) {
@@ -167,6 +167,7 @@
             const [r, g, b] = mixColors(colorData.components);
             const hexColor = rgbToHex(r, g, b);
             const rgbString = `rgb(${r}, ${g}, ${b})`;
+            const formulaWithBreaks = colorData.formula.replace(/\n/g, '<br>');
 
             return `
                 <div class="color-card">
@@ -175,7 +176,7 @@
                     </div>
                     <div class="color-info">
                         <div class="color-name">${colorData.name}</div>
-                        <div class="color-formula">${colorData.formula}</div>
+                        <div class="color-formula">${formulaWithBreaks}</div>
                     </div>
                 </div>
             `;
