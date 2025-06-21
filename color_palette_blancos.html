@@ -176,6 +176,9 @@
             const hexColor = rgbToHex(r, g, b);
             const rgbString = `rgb(${r}, ${g}, ${b})`;
 
+            // Convertir saltos de línea a <br> para el HTML
+            const formulaHTML = colorData.formula.replace(/\n/g, '<br>');
+
             return `
                 <div class="color-card">
                     <div class="color-display" style="background-color: ${rgbString};">
@@ -183,7 +186,7 @@
                     </div>
                     <div class="color-info">
                         <div class="color-name">${colorData.name}</div>
-                        <div class="color-formula">${colorData.formula.replace(/\n/g, '<br>')}</div>
+                        <div class="color-formula">${formulaHTML}</div>
                     </div>
                 </div>
             `;
