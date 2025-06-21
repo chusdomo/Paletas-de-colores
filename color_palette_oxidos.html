@@ -112,9 +112,6 @@
 <body>
     <div class="container">
         <h1>🎨 Paleta de Colores Óxidos</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">
-            Vista previa de las mezclas de pigmentos con sus fórmulas exactas
-        </p>
         
         <div class="palette-grid" id="paletteGrid">
         </div>
@@ -127,21 +124,21 @@
             'Magenta': [255, 0, 128],
             'Amarillo Medio': [255, 215, 0],
             'Azul Ultramar': [18, 10, 143],
-            'Blanco de Titanio': [255, 255, 255]
+            'Blanco Titanio': [255, 255, 255]
         };
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Óxido', formula: 'Rojo Medio 50, Amarillo Medio 25, Azul Ultramar 25', components: {'Rojo Medio': 50, 'Amarillo Medio': 25, 'Azul Ultramar': 25} },
-            { name: 'Claro', formula: 'Rojo Medio 45, Amarillo Medio 30, Azul Ultramar 15, Blanco de Titanio 10', components: {'Rojo Medio': 45, 'Amarillo Medio': 30, 'Azul Ultramar': 15, 'Blanco de Titanio': 10} },
-            { name: 'Oscuro', formula: 'Rojo Medio 55, Amarillo Medio 20, Azul Ultramar 25', components: {'Rojo Medio': 55, 'Amarillo Medio': 20, 'Azul Ultramar': 25} },
-            { name: 'Tierra', formula: 'Rojo Medio 40, Amarillo Medio 35, Azul Ultramar 25', components: {'Rojo Medio': 40, 'Amarillo Medio': 35, 'Azul Ultramar': 25} },
-            { name: 'Siena', formula: 'Rojo Medio 45, Amarillo Medio 40, Azul Ultramar 15', components: {'Rojo Medio': 45, 'Amarillo Medio': 40, 'Azul Ultramar': 15} },
-            { name: 'Marrón', formula: 'Rojo Medio 40, Amarillo Medio 30, Azul Ultramar 30', components: {'Rojo Medio': 40, 'Amarillo Medio': 30, 'Azul Ultramar': 30} },
-            { name: 'Rojizo', formula: 'Rojo Medio 60, Amarillo Medio 20, Azul Ultramar 20', components: {'Rojo Medio': 60, 'Amarillo Medio': 20, 'Azul Ultramar': 20} },
-            { name: 'Pastel', formula: 'Rojo Medio 40, Amarillo Medio 25, Azul Ultramar 15, Blanco de Titanio 20', components: {'Rojo Medio': 40, 'Amarillo Medio': 25, 'Azul Ultramar': 15, 'Blanco de Titanio': 20} },
-            { name: 'Avellana', formula: 'Rojo Medio 45, Amarillo Medio 30, Azul Ultramar 15, Blanco de Titanio 10', components: {'Rojo Medio': 45, 'Amarillo Medio': 30, 'Azul Ultramar': 15, 'Blanco de Titanio': 10} },
-            { name: 'Desierto', formula: 'Rojo Medio 35, Amarillo Medio 40, Azul Ultramar 15, Blanco de Titanio 10', components: {'Rojo Medio': 35, 'Amarillo Medio': 40, 'Azul Ultramar': 15, 'Blanco de Titanio': 10} }
+            { name: 'Óxido', formula: 'Rojo Medio 50<br>Amarillo Medio 25<br>Azul Ultramar 25', components: {'Rojo Medio': 50, 'Amarillo Medio': 25, 'Azul Ultramar': 25} },
+            { name: 'Claro', formula: 'Rojo Medio 45<br>Amarillo Medio 30<br>Azul Ultramar 15<br>Blanco Titanio 10', components: {'Rojo Medio': 45, 'Amarillo Medio': 30, 'Azul Ultramar': 15, 'Blanco Titanio': 10} },
+            { name: 'Oscuro', formula: 'Rojo Medio 55<br>Amarillo Medio 20<br>Azul Ultramar 25', components: {'Rojo Medio': 55, 'Amarillo Medio': 20, 'Azul Ultramar': 25} },
+            { name: 'Tierra', formula: 'Rojo Medio 40<br>Amarillo Medio 35<br>Azul Ultramar 25', components: {'Rojo Medio': 40, 'Amarillo Medio': 35, 'Azul Ultramar': 25} },
+            { name: 'Siena', formula: 'Rojo Medio 45<br>Amarillo Medio 40<br>Azul Ultramar 15', components: {'Rojo Medio': 45, 'Amarillo Medio': 40, 'Azul Ultramar': 15} },
+            { name: 'Marrón', formula: 'Rojo Medio 40<br>Amarillo Medio 30<br>Azul Ultramar 30', components: {'Rojo Medio': 40, 'Amarillo Medio': 30, 'Azul Ultramar': 30} },
+            { name: 'Rojizo', formula: 'Rojo Medio 60<br>Amarillo Medio 20<br>Azul Ultramar 20', components: {'Rojo Medio': 60, 'Amarillo Medio': 20, 'Azul Ultramar': 20} },
+            { name: 'Pastel', formula: 'Rojo Medio 40<br>Amarillo Medio 25<br>Azul Ultramar 15<br>Blanco Titanio 20', components: {'Rojo Medio': 40, 'Amarillo Medio': 25, 'Azul Ultramar': 15, 'Blanco Titanio': 20} },
+            { name: 'Avellana', formula: 'Rojo Medio 45<br>Amarillo Medio 30<br>Azul Ultramar 15<br>Blanco Titanio 10', components: {'Rojo Medio': 45, 'Amarillo Medio': 30, 'Azul Ultramar': 15, 'Blanco Titanio': 10} },
+            { name: 'Desierto', formula: 'Rojo Medio 35<br>Amarillo Medio 40<br>Azul Ultramar 15<br>Blanco Titanio 10', components: {'Rojo Medio': 35, 'Amarillo Medio': 40, 'Azul Ultramar': 15, 'Blanco Titanio': 10} }
         ];
 
         function mixColors(components) {
