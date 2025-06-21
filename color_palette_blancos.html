@@ -26,7 +26,7 @@
             text-align: center;
             color: #333;
             margin-bottom: 30px;
-            font-size: 2.53em;
+            font-size: 2.2em;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
         
@@ -64,21 +64,20 @@
         }
         
         .color-name {
-            font-size: 2.53em;
+            font-size: 2.2em;
             font-weight: bold;
             color: #333;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1.96em;
+            font-size: 1.7em;
             color: #666;
-            line-height: 1.6;
+            line-height: 1.4;
             background: white;
             padding: 8px;
             border-radius: 6px;
             border-left: 3px solid #ddd;
-            white-space: pre-line;
         }
         
         .hex-code {
@@ -90,7 +89,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1.84em;
+            font-size: 1.6em;
             cursor: pointer;
             user-select: none;
         }
@@ -125,7 +124,7 @@
             'Rojo Medio': [220, 20, 20],
             'Magenta': [255, 0, 128],
             'Amarillo Medio': [255, 215, 0],
-            'Azul de Cobalto': [0, 71, 171],
+            'Azul Cobalto': [0, 71, 171],
             'Azul Ultramar': [18, 10, 143],
             'Blanco Titanio': [255, 255, 255]
         };
@@ -136,8 +135,8 @@
             { name: 'Hueso', formula: 'Blanco Titanio 98\nAmarillo Medio 2', components: {'Blanco Titanio': 98, 'Amarillo Medio': 2} },
             { name: 'Marfil', formula: 'Blanco Titanio 96\nAmarillo Medio 3\nRojo Medio 1', components: {'Blanco Titanio': 96, 'Amarillo Medio': 3, 'Rojo Medio': 1} },
             { name: 'Nieve', formula: 'Blanco Titanio 100', components: {'Blanco Titanio': 100} },
-            { name: 'Perla', formula: 'Blanco Titanio 97\nAzul de Cobalto 2\nAmarillo Medio 1', components: {'Blanco Titanio': 97, 'Azul de Cobalto': 2, 'Amarillo Medio': 1} },
-            { name: 'Nacarado', formula: 'Blanco Titanio 95\nAzul de Cobalto 2\nAmarillo Medio 2\nRojo Medio 1', components: {'Blanco Titanio': 95, 'Azul de Cobalto': 2, 'Amarillo Medio': 2, 'Rojo Medio': 1} },
+            { name: 'Perla', formula: 'Blanco Titanio 97\nAzul Cobalto 2\nAmarillo Medio 1', components: {'Blanco Titanio': 97, 'Azul Cobalto': 2, 'Amarillo Medio': 1} },
+            { name: 'Nacarado', formula: 'Blanco Titanio 95\nAzul Cobalto 2\nAmarillo Medio 2\nRojo Medio 1', components: {'Blanco Titanio': 95, 'Azul Cobalto': 2, 'Amarillo Medio': 2, 'Rojo Medio': 1} },
             { name: 'Lechoso', formula: 'Blanco Titanio 99\nAmarillo Medio 1', components: {'Blanco Titanio': 99, 'Amarillo Medio': 1} },
             { name: 'Roto', formula: 'Blanco Titanio 95\nAmarillo Medio 3\nAzul Ultramar 2', components: {'Blanco Titanio': 95, 'Amarillo Medio': 3, 'Azul Ultramar': 2} },
             { name: 'Platinado', formula: 'Blanco Titanio 96\nAzul Ultramar 3\nMagenta 1', components: {'Blanco Titanio': 96, 'Azul Ultramar': 3, 'Magenta': 1} },
@@ -184,7 +183,7 @@
                     </div>
                     <div class="color-info">
                         <div class="color-name">${colorData.name}</div>
-                        <div class="color-formula">${colorData.formula}</div>
+                        <div class="color-formula">${colorData.formula.replace(/\n/g, '<br>')}</div>
                     </div>
                 </div>
             `;
