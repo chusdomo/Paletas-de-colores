@@ -116,9 +116,6 @@
 <body>
     <div class="container">
         <h1>🧡 Paleta de Colores Naranjas</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">
-            Vista previa de las mezclas de pigmentos con sus fórmulas exactas
-        </p>
         
         <div class="palette-grid" id="paletteGrid">
         </div>
@@ -130,21 +127,21 @@
             'Rojo Medio': [220, 20, 20],
             'Amarillo Medio': [255, 215, 0],
             'Azul Ultramar': [18, 10, 143],
-            'Blanco de Titanio': [255, 255, 255]
+            'Blanco Titanio': [255, 255, 255]
         };
 
         // Definición de las mezclas
         const colorMixes = [
-            { name: 'Naranja', formula: 'Amarillo Medio 60, Rojo Medio 40', components: {'Amarillo Medio': 60, 'Rojo Medio': 40} },
-            { name: 'Mandarina', formula: 'Amarillo Medio 65, Rojo Medio 30, Blanco de Titanio 5', components: {'Amarillo Medio': 65, 'Rojo Medio': 30, 'Blanco de Titanio': 5} },
-            { name: 'Melón', formula: 'Amarillo Medio 70, Rojo Medio 20, Blanco de Titanio 10', components: {'Amarillo Medio': 70, 'Rojo Medio': 20, 'Blanco de Titanio': 10} },
-            { name: 'Pastel', formula: 'Amarillo Medio 50, Rojo Medio 10, Blanco de Titanio 40', components: {'Amarillo Medio': 50, 'Rojo Medio': 10, 'Blanco de Titanio': 40} },
-            { name: 'Coral', formula: 'Amarillo Medio 55, Rojo Medio 35, Blanco de Titanio 10', components: {'Amarillo Medio': 55, 'Rojo Medio': 35, 'Blanco de Titanio': 10} },
-            { name: 'Calabaza', formula: 'Amarillo Medio 65, Rojo Medio 35', components: {'Amarillo Medio': 65, 'Rojo Medio': 35} },
-            { name: 'Durazno', formula: 'Amarillo Medio 60, Rojo Medio 15, Blanco de Titanio 25', components: {'Amarillo Medio': 60, 'Rojo Medio': 15, 'Blanco de Titanio': 25} },
-            { name: 'Mango', formula: 'Amarillo Medio 70, Rojo Medio 25, Blanco de Titanio 5', components: {'Amarillo Medio': 70, 'Rojo Medio': 25, 'Blanco de Titanio': 5} },
-            { name: 'Zanahoria', formula: 'Amarillo Medio 60, Rojo Medio 35, Blanco de Titanio 5', components: {'Amarillo Medio': 60, 'Rojo Medio': 35, 'Blanco de Titanio': 5} },
-            { name: 'Salmón', formula: 'Amarillo Medio 55, Rojo Medio 25, Blanco de Titanio 20', components: {'Amarillo Medio': 55, 'Rojo Medio': 25, 'Blanco de Titanio': 20} }
+            { name: 'Naranja', formula: 'Amarillo Medio 60<br>Rojo Medio 40', components: {'Amarillo Medio': 60, 'Rojo Medio': 40} },
+            { name: 'Mandarina', formula: 'Amarillo Medio 65<br>Rojo Medio 30<br>Blanco Titanio 5', components: {'Amarillo Medio': 65, 'Rojo Medio': 30, 'Blanco Titanio': 5} },
+            { name: 'Melón', formula: 'Amarillo Medio 70<br>Rojo Medio 20<br>Blanco Titanio 10', components: {'Amarillo Medio': 70, 'Rojo Medio': 20, 'Blanco Titanio': 10} },
+            { name: 'Pastel', formula: 'Amarillo Medio 50<br>Rojo Medio 10<br>Blanco Titanio 40', components: {'Amarillo Medio': 50, 'Rojo Medio': 10, 'Blanco Titanio': 40} },
+            { name: 'Coral', formula: 'Amarillo Medio 55<br>Rojo Medio 35<br>Blanco Titanio 10', components: {'Amarillo Medio': 55, 'Rojo Medio': 35, 'Blanco Titanio': 10} },
+            { name: 'Calabaza', formula: 'Amarillo Medio 65<br>Rojo Medio 35', components: {'Amarillo Medio': 65, 'Rojo Medio': 35} },
+            { name: 'Durazno', formula: 'Amarillo Medio 60<br>Rojo Medio 15<br>Blanco Titanio 25', components: {'Amarillo Medio': 60, 'Rojo Medio': 15, 'Blanco Titanio': 25} },
+            { name: 'Mango', formula: 'Amarillo Medio 70<br>Rojo Medio 25<br>Blanco Titanio 5', components: {'Amarillo Medio': 70, 'Rojo Medio': 25, 'Blanco Titanio': 5} },
+            { name: 'Zanahoria', formula: 'Amarillo Medio 60<br>Rojo Medio 35<br>Blanco Titanio 5', components: {'Amarillo Medio': 60, 'Rojo Medio': 35, 'Blanco Titanio': 5} },
+            { name: 'Salmón', formula: 'Amarillo Medio 55<br>Rojo Medio 25<br>Blanco Titanio 20', components: {'Amarillo Medio': 55, 'Rojo Medio': 25, 'Blanco Titanio': 20} }
         ];
 
         function mixColors(components) {
