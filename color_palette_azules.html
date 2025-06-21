@@ -11,6 +11,7 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
+            font-size: 1.15em;
         }
         
         .container {
@@ -26,7 +27,7 @@
             text-align: center;
             color: #333;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 2.53em;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
             background: linear-gradient(45deg, #1976d2, #42a5f5);
             -webkit-background-clip: text;
@@ -68,16 +69,16 @@
         }
         
         .color-name {
-            font-size: 1.5em;
+            font-size: 1.725em;
             font-weight: bold;
             color: #0d47a1;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1em;
+            font-size: 1.15em;
             color: #666;
-            line-height: 1.4;
+            line-height: 1.6;
             background: white;
             padding: 8px;
             border-radius: 6px;
@@ -93,7 +94,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1em;
+            font-size: 1.15em;
             cursor: pointer;
             user-select: none;
         }
@@ -191,6 +192,7 @@
             const [r, g, b] = mixColors(colorData.components);
             const hexColor = rgbToHex(r, g, b);
             const rgbString = `rgb(${r}, ${g}, ${b})`;
+            const formulaFormatted = colorData.formula.replace(/\n/g, '<br>');
 
             return `
                 <div class="color-card">
@@ -199,7 +201,7 @@
                     </div>
                     <div class="color-info">
                         <div class="color-name">${colorData.name}</div>
-                        <div class="color-formula">${colorData.formula.replace(/\n/g, '<br>')}</div>
+                        <div class="color-formula">${formulaFormatted}</div>
                     </div>
                 </div>
             `;
