@@ -26,7 +26,7 @@
             text-align: center;
             color: #2d5016;
             margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 2.09em;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
         
@@ -63,20 +63,25 @@
         }
         
         .color-name {
-            font-size: 2.2em;
+            font-size: 2.09em;
             font-weight: bold;
             color: #2d5016;
             margin-bottom: 8px;
         }
         
         .color-formula {
-            font-size: 1.7em;
+            font-size: 1.615em;
             color: #666;
             line-height: 1.4;
             background: white;
             padding: 8px;
             border-radius: 6px;
             border-left: 3px solid #90c695;
+        }
+        
+        .formula-line {
+            display: block;
+            margin: 2px 0;
         }
         
         .hex-code {
@@ -88,7 +93,7 @@
             padding: 4px 8px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1.6em;
+            font-size: 1.52em;
             cursor: pointer;
             user-select: none;
         }
@@ -112,9 +117,6 @@
 <body>
     <div class="container">
         <h1>🌿 Paleta de Colores Verdes</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">
-            Vista previa de las mezclas de pigmentos con sus fórmulas exactas
-        </p>
         
         <div class="palette-grid" id="paletteGrid">
         </div>
@@ -125,9 +127,9 @@
         const baseColorsRYB = {
             'Amarillo Medio': [1, 1, 0],      // Amarillo puro en RYB
             'Azul Ultramar': [0, 0.2, 1],     // Azul ultramar en RYB
-            'Azul de Cobalto': [0, 0.4, 1],   // Azul cobalto en RYB
+            'Azul Cobalto': [0, 0.4, 1],   // Azul cobalto en RYB
             'Rojo Medio': [1, 0, 0],          // Rojo puro en RYB
-            'Blanco de Titanio': [1, 1, 1]     // Blanco
+            'Blanco Titanio': [1, 1, 1]     // Blanco
         };
 
         // Conversión de RYB a RGB para visualización
@@ -146,24 +148,24 @@
         // Definición de las mezclas
         const colorMixes = [
             { name: 'Verde', formula: 'Amarillo Medio 50, Azul Ultramar 50', components: {'Amarillo Medio': 50, 'Azul Ultramar': 50} },
-            { name: 'Aguamarina', formula: 'Azul de Cobalto 50, Amarillo Medio 35, Blanco de Titanio 15', components: {'Azul de Cobalto': 50, 'Amarillo Medio': 35, 'Blanco de Titanio': 15} },
+            { name: 'Aguamarina', formula: 'Azul Cobalto 50, Amarillo Medio 35, Blanco Titanio 15', components: {'Azul Cobalto': 50, 'Amarillo Medio': 35, 'Blanco Titanio': 15} },
             { name: 'Bosque', formula: 'Azul Ultramar 45, Amarillo Medio 40, Rojo Medio 15', components: {'Azul Ultramar': 45, 'Amarillo Medio': 40, 'Rojo Medio': 15} },
-            { name: 'Césped', formula: 'Amarillo Medio 55, Azul Ultramar 40, Blanco de Titanio 5', components: {'Amarillo Medio': 55, 'Azul Ultramar': 40, 'Blanco de Titanio': 5} },
-            { name: 'Esmeralda', formula: 'Azul de Cobalto 50, Amarillo Medio 30, Blanco de Titanio 20', components: {'Azul de Cobalto': 50, 'Amarillo Medio': 30, 'Blanco de Titanio': 20} },
-            { name: 'Helecho', formula: 'Amarillo Medio 60, Azul Ultramar 35, Blanco de Titanio 5', components: {'Amarillo Medio': 60, 'Azul Ultramar': 35, 'Blanco de Titanio': 5} },
-            { name: 'Hierba', formula: 'Amarillo Medio 50, Azul Ultramar 45, Blanco de Titanio 5', components: {'Amarillo Medio': 50, 'Azul Ultramar': 45, 'Blanco de Titanio': 5} },
-            { name: 'Jade', formula: 'Azul de Cobalto 40, Amarillo Medio 35, Blanco de Titanio 25', components: {'Azul de Cobalto': 40, 'Amarillo Medio': 35, 'Blanco de Titanio': 25} },
-            { name: 'Lima', formula: 'Amarillo Medio 65, Azul Ultramar 25, Blanco de Titanio 10', components: {'Amarillo Medio': 65, 'Azul Ultramar': 25, 'Blanco de Titanio': 10} },
-            { name: 'Manzana', formula: 'Amarillo Medio 60, Azul Ultramar 30, Blanco de Titanio 10', components: {'Amarillo Medio': 60, 'Azul Ultramar': 30, 'Blanco de Titanio': 10} },
-            { name: 'Menta', formula: 'Amarillo Medio 50, Azul de Cobalto 30, Blanco de Titanio 20', components: {'Amarillo Medio': 50, 'Azul de Cobalto': 30, 'Blanco de Titanio': 20} },
-            { name: 'Musgo', formula: 'Amarillo Medio 50, Azul Ultramar 30, Rojo Medio 15, Blanco de Titanio 5', components: {'Amarillo Medio': 50, 'Azul Ultramar': 30, 'Rojo Medio': 15, 'Blanco de Titanio': 5} },
+            { name: 'Césped', formula: 'Amarillo Medio 55, Azul Ultramar 40, Blanco Titanio 5', components: {'Amarillo Medio': 55, 'Azul Ultramar': 40, 'Blanco Titanio': 5} },
+            { name: 'Esmeralda', formula: 'Azul Cobalto 50, Amarillo Medio 30, Blanco Titanio 20', components: {'Azul Cobalto': 50, 'Amarillo Medio': 30, 'Blanco Titanio': 20} },
+            { name: 'Helecho', formula: 'Amarillo Medio 60, Azul Ultramar 35, Blanco Titanio 5', components: {'Amarillo Medio': 60, 'Azul Ultramar': 35, 'Blanco Titanio': 5} },
+            { name: 'Hierba', formula: 'Amarillo Medio 50, Azul Ultramar 45, Blanco Titanio 5', components: {'Amarillo Medio': 50, 'Azul Ultramar': 45, 'Blanco Titanio': 5} },
+            { name: 'Jade', formula: 'Azul Cobalto 40, Amarillo Medio 35, Blanco Titanio 25', components: {'Azul Cobalto': 40, 'Amarillo Medio': 35, 'Blanco Titanio': 25} },
+            { name: 'Lima', formula: 'Amarillo Medio 65, Azul Ultramar 25, Blanco Titanio 10', components: {'Amarillo Medio': 65, 'Azul Ultramar': 25, 'Blanco Titanio': 10} },
+            { name: 'Manzana', formula: 'Amarillo Medio 60, Azul Ultramar 30, Blanco Titanio 10', components: {'Amarillo Medio': 60, 'Azul Ultramar': 30, 'Blanco Titanio': 10} },
+            { name: 'Menta', formula: 'Amarillo Medio 50, Azul Cobalto 30, Blanco Titanio 20', components: {'Amarillo Medio': 50, 'Azul Cobalto': 30, 'Blanco Titanio': 20} },
+            { name: 'Musgo', formula: 'Amarillo Medio 50, Azul Ultramar 30, Rojo Medio 15, Blanco Titanio 5', components: {'Amarillo Medio': 50, 'Azul Ultramar': 30, 'Rojo Medio': 15, 'Blanco Titanio': 5} },
             { name: 'Oliva', formula: 'Amarillo Medio 50, Azul Ultramar 30, Rojo Medio 20', components: {'Amarillo Medio': 50, 'Azul Ultramar': 30, 'Rojo Medio': 20} },
-            { name: 'Pastel', formula: 'Blanco de Titanio 70, Amarillo Medio 20, Azul de Cobalto 10', components: {'Blanco de Titanio': 70, 'Amarillo Medio': 20, 'Azul de Cobalto': 10} },
-            { name: 'Pistacho', formula: 'Amarillo Medio 55, Azul Ultramar 35, Blanco de Titanio 10', components: {'Amarillo Medio': 55, 'Azul Ultramar': 35, 'Blanco de Titanio': 10} },
-            { name: 'Primavera', formula: 'Amarillo Medio 60, Azul Ultramar 35, Blanco de Titanio 5', components: {'Amarillo Medio': 60, 'Azul Ultramar': 35, 'Blanco de Titanio': 5} },
-            { name: 'Hierbabuena', formula: 'Amarillo Medio 50, Azul de Cobalto 30, Blanco de Titanio 20', components: {'Amarillo Medio': 50, 'Azul de Cobalto': 30, 'Blanco de Titanio': 20} },
+            { name: 'Pastel', formula: 'Blanco Titanio 70, Amarillo Medio 20, Azul Cobalto 10', components: {'Blanco Titanio': 70, 'Amarillo Medio': 20, 'Azul Cobalto': 10} },
+            { name: 'Pistacho', formula: 'Amarillo Medio 55, Azul Ultramar 35, Blanco Titanio 10', components: {'Amarillo Medio': 55, 'Azul Ultramar': 35, 'Blanco Titanio': 10} },
+            { name: 'Primavera', formula: 'Amarillo Medio 60, Azul Ultramar 35, Blanco Titanio 5', components: {'Amarillo Medio': 60, 'Azul Ultramar': 35, 'Blanco Titanio': 5} },
+            { name: 'Hierbabuena', formula: 'Amarillo Medio 50, Azul Cobalto 30, Blanco Titanio 20', components: {'Amarillo Medio': 50, 'Azul Cobalto': 30, 'Blanco Titanio': 20} },
             { name: 'Selva', formula: 'Azul Ultramar 50, Amarillo Medio 40, Rojo Medio 10', components: {'Azul Ultramar': 50, 'Amarillo Medio': 40, 'Rojo Medio': 10} },
-            { name: 'Agua', formula: 'Azul de Cobalto 50, Amarillo Medio 25, Blanco de Titanio 25', components: {'Azul de Cobalto': 50, 'Amarillo Medio': 25, 'Blanco de Titanio': 25} },
+            { name: 'Agua', formula: 'Azul Cobalto 50, Amarillo Medio 25, Blanco Titanio 25', components: {'Azul Cobalto': 50, 'Amarillo Medio': 25, 'Blanco Titanio': 25} },
             { name: 'Albahaca', formula: 'Amarillo Medio 55, Azul Ultramar 35, Rojo Medio 10', components: {'Amarillo Medio': 55, 'Azul Ultramar': 35, 'Rojo Medio': 10} }
         ];
 
@@ -203,6 +205,10 @@
             return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
         }
 
+        function formatFormula(formula) {
+            return formula.split(', ').map(part => `<span class="formula-line">${part}</span>`).join('');
+        }
+
         function createColorCard(colorData) {
             const [r, g, b] = mixColors(colorData.components);
             const hexColor = rgbToHex(r, g, b);
@@ -215,7 +221,7 @@
                     </div>
                     <div class="color-info">
                         <div class="color-name">${colorData.name}</div>
-                        <div class="color-formula">${colorData.formula}</div>
+                        <div class="color-formula">${formatFormula(colorData.formula)}</div>
                     </div>
                 </div>
             `;
